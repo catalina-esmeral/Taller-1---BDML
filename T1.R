@@ -1,2 +1,12 @@
-hola
-hola
+library("rvest")
+urldefinicion <-c()
+urldefinicion[1]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page1.html")
+urldefinicion[2]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page2.html")
+urldefinicion[3]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page3.html")
+urldefinicion[4]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page4.html")
+urldefinicion[5]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page5.html")
+urldefinicion[6]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page6.html")
+urldefinicion[7]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page7.html")
+urldefinicion[8]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page8.html")
+urldefinicion[9]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page9.html")
+urldefinicion[10]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page1.html")
