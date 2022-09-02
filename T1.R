@@ -9,4 +9,4 @@ urldefinicion[6]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/pa
 urldefinicion[7]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page7.html")
 urldefinicion[8]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page8.html")
 urldefinicion[9]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page9.html")
-urldefinicion[10]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page1.html")
+urldefinicion[10]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page10.html")
