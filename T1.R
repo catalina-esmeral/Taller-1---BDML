@@ -38,6 +38,11 @@ df <- df[ which(df$age>=18), ]
 
 names(df)
 
-#buscamos NAs
+#buscamos NAs para seleccionar la variable
 sapply(df, function(x) sum(is.na(x)))
+
+# seleccionamos ingtot por no tener NAs
+
+#Falta poner las estadisticas descriptivas
+
 
