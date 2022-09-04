@@ -41,8 +41,10 @@ names(df)
 #buscamos NAs para seleccionar la variable
 sapply(df, function(x) sum(is.na(x)))
 
-# seleccionamos ingtot por no tener NAs
+# Seleccionamos ingtot por no tener NAs
+# Estadísticas Descriptivas
+summary(df$ingtot)
 
-#Falta poner las estadisticas descriptivas
+#2
 
 
