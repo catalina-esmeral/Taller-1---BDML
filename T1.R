@@ -42,12 +42,35 @@ names(df)
 sapply(df, function(x) sum(is.na(x)))
 
 # Seleccionamos ingtot por no tener NAs
-# Estadísticas Descriptivas
+# Estad?sticas Descriptivas
 summary(df$ingtot)
 
 #2
+urlbase <- paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/pages/geih_page_",
+                  1:10, ".html")
+
+df <- data.frame()
+
+for (url in urlbase) {
+  print(url)
+  temp <- read_html(url) %>% 
+    html_table()
+  temp <- as.data.frame(temp[[1]])
+  df <- rbind(df, temp)
+}
 
 
+#restringir la muestra a mayores de 18
+df <- df[ which(df$age>=18), ]
+
+y_salary_m <-df
+age <-df
 
 
+summary (df$y_salary_m)
+summary (df$age)
 
+
+df<-df [,-1]
+mod <- lm(y_salary_m ~ age, df)
+summary(mod)
