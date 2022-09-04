@@ -1,7 +1,7 @@
 rm(list = ls())
 
 library("rvest")
-
+library("pacman")
 # urldefinicion <-c()
 # urldefinicion[1]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page1.html")
 # urldefinicion[2]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page2.html")
@@ -46,5 +46,8 @@ sapply(df, function(x) sum(is.na(x)))
 summary(df$ingtot)
 
 #2
+
+
+
 
 
