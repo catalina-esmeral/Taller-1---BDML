@@ -1,3 +1,5 @@
+rm(list = ls())
+
 library("rvest")
 
 # urldefinicion <-c()
@@ -35,3 +37,7 @@ for (url in urlbase) {
 df <- df[ which(df$age>=18), ]
 
 names(df)
+
+#buscamos NAs
+sapply(df, function(x) sum(is.na(x)))
+
