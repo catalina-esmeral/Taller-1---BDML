@@ -6,18 +6,6 @@ p_load(rio, # import/export data
        tidyverse, # tidy-data
        skimr, # summary data
        caret) # Classification And REgression Training
-# urldefinicion <-c()
-# urldefinicion[1]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page1.html")
-# urldefinicion[2]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page2.html")
-# urldefinicion[3]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page3.html")
-# urldefinicion[4]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page4.html")
-# urldefinicion[5]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page5.html")
-# urldefinicion[6]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page6.html")
-# urldefinicion[7]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page7.html")
-# urldefinicion[8]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page8.html")
-# urldefinicion[9]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page9.html")
-# urldefinicion[10]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page10.html")
-
 #1
 
 #a
@@ -45,12 +33,9 @@ df <- df[ which(df$age>=18), ]
 
 names(df)
 
-#buscamos NAs para seleccionar la variable
-sapply(df, function(x) sum(is.na(x)))
-
-# Seleccionamos ingtot por no tener NAs
+# Seleccionamos y_total_m por no tener NAs
 # Estad?sticas Descriptivas
-summary(df$ingtot)
+summary(df$y_total_m)
 
 #2
 urlbase <- paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/pages/geih_page_",
@@ -69,3 +54,8 @@ mod <- lm(y_salary_m ~ age + I(age^2), df)
 summary(mod)
 
 #3
+#a)
+df = mutate(.data = df , female = ifelse(test = sex == 0, yes = 1, no = 0))
+mod3 <- lm(I(log(y_total_m)) ~ female, df)
+summary(mod3)
+
