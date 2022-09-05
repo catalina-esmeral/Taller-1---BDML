@@ -2,6 +2,10 @@ rm(list = ls())
 
 library("rvest")
 library("pacman")
+p_load(rio, # import/export data
+       tidyverse, # tidy-data
+       skimr, # summary data
+       caret) # Classification And REgression Training
 # urldefinicion <-c()
 # urldefinicion[1]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page1.html")
 # urldefinicion[2]<-paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/page2.html")
@@ -31,6 +35,9 @@ for (url in urlbase) {
   df <- rbind(df, temp)
 }
 
+#descriptivas
+skim(df) %>% head()
+
 #b
 
 #restringir la muestra a mayores de 18
@@ -49,28 +56,16 @@ summary(df$ingtot)
 urlbase <- paste0("https://ignaciomsarmiento.github.io/GEIH2018_sample/pages/geih_page_",
                   1:10, ".html")
 
-df <- data.frame()
-
-for (url in urlbase) {
-  print(url)
-  temp <- read_html(url) %>% 
-    html_table()
-  temp <- as.data.frame(temp[[1]])
-  df <- rbind(df, temp)
-}
-
 
 #restringir la muestra a mayores de 18
 df <- df[ which(df$age>=18), ]
 
-y_salary_m <-df
-age <-df
-
-
+#2
 summary (df$y_salary_m)
 summary (df$age)
 
-
 df<-df [,-1]
-mod <- lm(y_salary_m ~ age, df)
+mod <- lm(y_salary_m ~ age + I(age^2), df)
 summary(mod)
+
+#3
