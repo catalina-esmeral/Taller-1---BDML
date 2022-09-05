@@ -59,7 +59,7 @@ df = mutate(.data = df , female = ifelse(test = sex == 0, yes = 1, no = 0))
 mod3 <- lm(I(log(y_total_m)) ~ female, df)
 summary(mod3)
 #b)
-rm(list = ls()) 
+
 
 # Load relevant packages
 require(pacman)
@@ -72,12 +72,9 @@ setwd(path)
 # Import dataset
 load("df")
 age.earnings.y_total_m('peak ages','salary gap')
-X = earnings [age, y_m]
+X = earnings [age, y_total_m]
 y = age ["df$age"]
 data = df
-
-# Before run the linear model, check all the variables classes
-skim(dat) 
 
 #4
 
