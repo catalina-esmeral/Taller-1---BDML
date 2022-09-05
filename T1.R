@@ -61,20 +61,27 @@ summary(mod3)
 #b)
 
 
-# Load relevant packages
-require(pacman)
-p_load(tidyverse,knitr,kableExtra,here,jtools,ggstance,broom,broom.mixed,skimr)
+require("tidyverse")
+set.seed(1234)
+n<-length(data_frame(y_total_m))
+R<-1000
+ee_c1<-rep(0,R)
+ee_c2<-rep(0,R)
+ecof_1<-rep(0,R)
+ecof_2<-rep(0,R)
+for (i in 1:R)
+{ea_sample<-sample_frac(data_frame,size=1,replace = TRUE)}
+modelEA1<-lm(y_total_m~age + age^2,ea_sample)
+coefs<-modelEA1$coefficients
+ees<-summary(modelEA1)$coefficient{,2}
 
-# Set working directory
-path <- here()
-setwd(path)
+  
 
-# Import dataset
-load("df")
-age.earnings.y_total_m('peak ages','salary gap')
-X = earnings [age, y_total_m]
-y = age ["df$age"]
-data = df
+
+
+  
+  
+}
 
 #4
 
