@@ -58,4 +58,8 @@ summary(mod)
 df = mutate(.data = df , female = ifelse(test = sex == 0, yes = 1, no = 0))
 mod3 <- lm(I(log(y_total_m)) ~ female, df)
 summary(mod3)
+#b)
+
+#4
+
 
